@@ -1,0 +1,20 @@
+.menu__link {
+    margin-top: 0;
+    margin-left: 25px;
+    margin-right: 0;
+    margin-bottom: 0;
+    font-family: Inter, 'Arial', sans-serif;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    transition: opacity 0.1s linear 0.1s;
+    opacity: 0.6;
+}
+
+.menu__link:hover {
+    cursor: pointer;
+    opacity: 1;
+}
