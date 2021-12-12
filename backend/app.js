@@ -11,6 +11,7 @@ const NotFoundError = require('./errors/not-found-err');
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
 const auth = require('./middlewares/auth');
+const {requestLogger, errorLogger} = require('./middlewares/logger');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -26,6 +27,7 @@ const limiter = rateLimit({
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(requestLogger);
 app.use(cookieParser());
 app.use(helmet());
 app.use(limiter);
@@ -50,6 +52,7 @@ app.post('/signin', celebrate({
 app.use(auth);
 app.use('/', usersRouter);
 app.use('/', cardsRouter);
+app.use(errorLogger);
 app.use(errors());
 
 app.all('*', (req) => {
