@@ -13,7 +13,7 @@ node_modules
 # Optional REPL history
 .idea
 .DS_Store
-/backend/.env
+
 
 ./frontend/build
 frontend/build
