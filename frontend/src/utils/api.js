@@ -90,7 +90,7 @@ const TOKEN = "ced48e6e-7309-4683-b554-3b5b361d985d";
 
 //  export instance of Api
 const api = new Api({
-    baseUrl: `https://api.superproject.nomoredomains.rocks/`,
+    baseUrl: `https://api.superproject.nomoredomains.rocks`,
     headers: {
         authorization: TOKEN,
         "Content-Type": "application/json",
