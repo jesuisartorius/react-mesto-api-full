@@ -127,7 +127,7 @@ const updateProfile = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(BadRequestError('Переданы некорректные данные при обновлении профиля'));
+        next(new BadRequestError('Переданы некорректные данные при обновлении профиля'));
       } else {
         next(err);
       }
@@ -150,7 +150,7 @@ const updateAvatar = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(BadRequestError('Переданы некорректные данные при обновлении аватара'));
+        next(new BadRequestError('Переданы некорректные данные при обновлении аватара'));
       } else {
         next(err);
       }
