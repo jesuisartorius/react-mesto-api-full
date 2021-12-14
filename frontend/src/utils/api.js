@@ -88,10 +88,10 @@ class Api {
 
 //  export instance of Api
 const api = new Api({
-    baseUrl: `https://api.superproject.nomoredomains.rocks`,
+    baseUrl: "https://api.superproject.nomoredomains.rocks",
     headers: {
-        "Content-Type": "application/json",
         "authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-Type": "application/json",
     },
 });
 
