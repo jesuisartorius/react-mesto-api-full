@@ -1,4 +1,4 @@
-const BASE_URL = "https://api.superproject.nomoredomains.rocks";
+const BASE_URL = "https://auth.nomoreparties.co";
 
 const checkResponse = (res) => {
     return res.ok ? res.json() : Promise.reject(`Error! + ${res.status}`);

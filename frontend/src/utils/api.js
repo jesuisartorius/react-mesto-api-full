@@ -1,5 +1,5 @@
 class Api {
-    constructor({baseUrl, headers}) {
+    constructor({baseUrl, headers, apiKey}) {
         this._baseUrl = baseUrl;
         this._headers = headers;
     }
@@ -85,12 +85,14 @@ class Api {
     }
 }
 
+const TOKEN = "ced48e6e-7309-4683-b554-3b5b361d985d";
+const COHORT_ID = "cohort-27";
 
 //  export instance of Api
 const api = new Api({
-    baseUrl: "https://api.superproject.nomoredomains.rocks",
+    baseUrl: `https://mesto.nomoreparties.co/v1/${COHORT_ID}`,
     headers: {
-        "authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        authorization: TOKEN,
         "Content-Type": "application/json",
     },
 });
