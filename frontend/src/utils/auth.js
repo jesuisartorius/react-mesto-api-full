@@ -26,7 +26,7 @@ export const login = (email, password) => {
         body: JSON.stringify({email, password})
     }).then(checkResponse)
         .then((data) => {
-            localStorage.setItem("jwt", data.token)
+            localStorage.setItem("jwt", data.jwt)
             return data;
         })
 }
