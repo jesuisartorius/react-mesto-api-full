@@ -181,7 +181,8 @@ function App() {
                     setEmail(res.data.email);
                     setIsLoggedIn(true);
                     history.push('/');
-                }).catch((err) => console.error(err))
+                })
+                .catch((err) => console.log(err))
         }
     }, [history]);
 
