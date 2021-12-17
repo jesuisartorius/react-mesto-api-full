@@ -184,7 +184,7 @@ function App() {
                 })
                 .catch((err) => console.log(err))
         }
-    }, [history]);
+    }, []);
 
     return (
         <CurrentUserContext.Provider value={currentUser}>
