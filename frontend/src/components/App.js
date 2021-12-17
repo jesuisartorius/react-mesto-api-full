@@ -79,7 +79,8 @@ function App() {
     useEffect(() => {
 
         api.getAppInfo().then(([userData, cards]) => {
-            setCurrentUser(userData.data);
+            setCurrentUser(userData);
+            console.log(userData)
             setCards(cards.data);
         }).catch((err) => {
             console.log(err);
