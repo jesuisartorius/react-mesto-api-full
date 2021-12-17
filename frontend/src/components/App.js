@@ -141,8 +141,8 @@ function App() {
 
     const onRegister = ({email, password}) => {
         auth.register(email, password)
-            .then((res) => {
-                setIsLoggedIn(true);
+            .then(() => {
+                // setIsLoggedIn(true);
                 history.push("/signin");
             })
             .catch(() => {
