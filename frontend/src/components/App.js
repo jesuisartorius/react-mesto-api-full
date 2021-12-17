@@ -84,7 +84,7 @@ function App() {
         }).catch((err) => {
             console.log(err);
         })
-    }, []);
+    }, [isLoggedIn]);
 
 
     function handleCardLike(card) {
@@ -178,7 +178,7 @@ function App() {
         if (token) {
             auth.checkToken(token)
                 .then((res) => {
-                    setEmail(res.data.email);
+                    setEmail(res.email);
                     setIsLoggedIn(true);
                     history.push('/');
                 })
