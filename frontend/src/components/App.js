@@ -77,9 +77,7 @@ function App() {
     }, []);
 
     useEffect(() => {
-        console.log('делаем запрос карточек и пользовательских данных')
         api.getAppInfo().then(([userData, cards]) => {
-            console.log('делаем запрос карточек и пользовательских данных2')
             setCurrentUser(userData);
             console.log(userData)
             setCards(cards.data);
