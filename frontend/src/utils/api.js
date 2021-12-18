@@ -91,7 +91,7 @@ class Api {
 //  export instance of Api
 const api = new Api({
     // baseUrl: `https://mesto.nomoreparties.co/v1/${COHORT_ID}`,
-    baseUrl: `https://superproject.nomoredomains.rocks`,
+    baseUrl: `https://api.superproject.nomoredomains.rocks`,
     headers: {
         authorization: `Bearer ${localStorage.getItem("jwt")}`,
         "Content-Type": "application/json",
