@@ -105,24 +105,24 @@ function App() {
                 setCards((state) => state.filter((c) => c._id !== card._id));
                 closeAllPopups();
             })
-            .catch((err) => console.error(err));
+            .catch((err) => console.log(err));
     };
 
     const handleUpdateUser = ({name, about}) => {
         api
             .setUserInfo({name, about})
             .then((userData) => {
-                setCurrentUser({name, about, ...userData});
+                setCurrentUser({name, about, ...userData.data});
                 closeAllPopups();
             })
-            .catch((err) => console.error(err));
+            .catch((err) => console.log(err));
     };
 
     const handleUpdateAvatar = (avatar) => {
         api
             .setUserAvatar(avatar)
             .then((userData) => {
-                setCurrentUser({avatar, ...userData});
+                setCurrentUser({avatar, ...userData.data});
                 closeAllPopups();
             })
             .catch((err) => console.log(err));
@@ -132,6 +132,8 @@ function App() {
         api
             .addCard({name, link})
             .then((card) => {
+                console.log(card)
+                console.log(cards)
                 setCards([card.data, ...cards]);
                 closeAllPopups();
             })
