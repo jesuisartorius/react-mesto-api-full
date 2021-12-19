@@ -157,6 +157,7 @@ function App() {
     const onLogin = ({email, password}) => {
         auth.login(email, password)
             .then((res) => {
+                window.location.reload();
                 setIsLoggedIn(true);
                 setEmail(email);
                 history.push("/");
@@ -185,7 +186,7 @@ function App() {
                 })
                 .catch((err) => console.log(err))
         }
-    }, []);
+    }, [history]);
 
     return (
         <CurrentUserContext.Provider value={currentUser}>
